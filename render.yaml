@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: sweetlabbakery
+    buildCommand: cd backend && mvn clean package -q -DskipTests
+    startCommand: java -jar backend/target/sweetlabbakery.jar --server.port=$PORT
+    envVars:
+      - key: PORT
+        value: 8080
